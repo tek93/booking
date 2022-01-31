@@ -1,0 +1,12 @@
+zapytanie znajdz rezerwacje dla "Andrzej Kowalski"
+curl -X GET "http://localhost:8081/reservations/guest?guest=Andrzej%20Kowalski" -H "accept: */*"
+
+
+zapytanie zrwaca rezerwacje dla KLG solusions
+curl -X GET "http://localhost:8081/reservations/renter?renter=KLG%20Solusions" -H "accept: */*"
+
+dodanie rezerwacji (Jan Nowak jest jednoczesnie wynajmującym/płacącym i gosciem)
+curl -X POST "http://localhost:8081/reservations/reserved" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"endDate\": \"2022-03-30\", \"guest\": \"Jan Nowak\", \"renter\": \"Jan Nowak\", \"roomType\": \"apartament\", \"startDate\": \"2022-03-29\"}"
+
+
+
